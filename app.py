@@ -35,7 +35,7 @@ def predict1():
 @app.route('/predict2', methods = ['POST'])
 def predict2():
 
-    int_features = [int(x) for x in request.form.values()]
+    int_features = [int(float(x)) for x in request.form.values()]
     final_features = [np.array(int_features)]
     prediction2 = model2.predict(final_features)
     
